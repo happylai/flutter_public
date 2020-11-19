@@ -779,7 +779,7 @@ public class FlutterBluePlugin implements FlutterPlugin, ActivityAware, MethodCa
                     try{
                         Protos.ScanResult scanResult = ProtoMaker.from(result.getDevice(), result);
                         invokeMethodUIThread("ScanResult", scanResult.toByteArray());
-                    }catch(e){
+                    }catch(Exception e){
                         Log.v("抛出异常-扫描设备转换数据",e.toString());
                     }
                 }

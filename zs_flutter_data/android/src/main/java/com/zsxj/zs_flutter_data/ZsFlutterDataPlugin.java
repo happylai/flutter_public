@@ -1,5 +1,7 @@
 package com.zsxj.zs_flutter_data;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -27,7 +29,12 @@ public class ZsFlutterDataPlugin implements FlutterPlugin, MethodCallHandler {
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     if (call.method.equals("GB2312")) {
       String str = call.arguments();
-      result.success(str.getBytes("GB2312"));
+      try {
+        byte[] list = str.getBytes("GB2312");
+        result.success(list);
+      }catch (Exception e) {
+        Log.v("GB2312 API 异常",e.toString());
+      }
       return;
     }
 

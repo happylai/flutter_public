@@ -33,11 +33,10 @@ public class ZsFlutterDataPlugin implements FlutterPlugin, MethodCallHandler {
         byte[] list = str.getBytes("GB2312");
         result.success(list);
       }catch (Exception e) {
-        Log.v("GB2312 API 异常",e.toString());
+        Log.v("GB2312 异常",e.toString());
       }
       return;
     }
-
     result.notImplemented();
   }
 

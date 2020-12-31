@@ -41,6 +41,7 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
 
 // 用来存储第一次 获取状态时候 代理回调后 再去更新
 @property (nonatomic, strong) FlutterResult stateResult;
+// 注意在只有在 hand state中 才回初始化self.centralManager; 所以使用的时候 需要先初始化state
 @property (nonatomic, assign) CBManagerState cbState;
 @property (nonatomic, assign) BOOL cbStateValue; // 是否有值
 @end

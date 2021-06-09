@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - zs_permisson (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - zs_permisson (from `.symlinks/plugins/zs_permisson/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  zs_permisson:
+    :path: ".symlinks/plugins/zs_permisson/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  zs_permisson: 3dc53c3cee088fba16d6a8394d0aa2251649c1b8
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.8.4

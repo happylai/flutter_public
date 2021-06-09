@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - zs_flutter_data (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - zs_flutter_data (from `.symlinks/plugins/zs_flutter_data/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  zs_flutter_data:
+    :path: ".symlinks/plugins/zs_flutter_data/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  zs_flutter_data: 2f2ef7754d8ea2f36c17178ba676f8851f5f0d15
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.8.4

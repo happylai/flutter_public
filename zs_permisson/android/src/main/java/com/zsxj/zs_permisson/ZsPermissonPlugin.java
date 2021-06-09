@@ -93,7 +93,7 @@ public class ZsPermissonPlugin implements FlutterPlugin, ActivityAware, MethodCa
     if (requestCode == REQUEST_ENABLE_BT) {
 
       if (permossion_result == null) {
-        return false;
+        return true;
       }
 
       if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -108,6 +108,6 @@ public class ZsPermissonPlugin implements FlutterPlugin, ActivityAware, MethodCa
       permossion_result = null;
     }
 
-    return false;
+    return true;
   }
 }

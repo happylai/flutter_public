@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:zs_bluetooth_printer/pages/printer_setting/page.dart';
 
 class Pages {
   //打印机设置
@@ -10,6 +11,6 @@ class Pages {
 }
 
 final AbstractRoutes htRoutes = PageRoutes(pages: {
-//  Pages.printerSetting: PrinterSettingPage(),
+  Pages.printerSetting: PrinterSettingPage(),
 //  Pages.printConfig: PrintConfigPage(),
 });

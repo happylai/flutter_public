@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:zs_bluetooth_printer/model/routes.dart';
 import 'package:zs_bluetooth_printer/template/print_template_list.dart';
 
+import 'model/shared_cache.dart';
+
 /**
  * 还需要考虑
  *  1. 当前对 路由管理的设置
@@ -29,7 +31,8 @@ class ZsBluetoothPrinterManager {
 
   static ZsBluetoothPrinterApi _zsBluetoothPrinterApi;
 
-  static initPrinter(ZsBluetoothPrinterApi obj){
+  static initPrinter(ZsBluetoothPrinterApi obj)async{
+    await localStore.init();
     _zsBluetoothPrinterApi = obj;
   }
 

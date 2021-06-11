@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-class ZsPermisson {
+class ZSPermissionPlugin {
   static const MethodChannel _channel =
       const MethodChannel('zs_permisson');
 

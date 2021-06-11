@@ -34,39 +34,39 @@ class _MyAppState extends State<MyApp> {
         children: [
           GestureDetector(
             onTap: () async {
-              var res = await ZsPermisson.checkLocationPermission();
+              var res = await ZSPermissionPlugin.checkLocationPermission();
               print("定位权限 $res");
             },
             child: item("checkLocationPermission"),
           ),
           GestureDetector(
             onTap: ()async {
-              var res = await ZsPermisson.checkLocationState();
+              var res = await ZSPermissionPlugin.checkLocationState();
               print("定位状态 $res");
             },
             child: item("checkLocationState"),
           ),
           GestureDetector(
             onTap: () {
-              ZsPermisson.openLocationState();
+              ZSPermissionPlugin.openLocationState();
             },
             child: item("openLocationState"),
           ),
           GestureDetector(
             onTap: () {
-              ZsPermisson.openLocationPermission();
+              ZSPermissionPlugin.openLocationPermission();
             },
             child: item("openLocationPermission"),
           ),
           GestureDetector(
             onTap: () {
-              ZsPermisson.openBluetoothPmission();
+              ZSPermissionPlugin.openBluetoothPmission();
             },
             child: item("openBluetoothPmission"),
           ),
           GestureDetector(
             onTap: () {
-              ZsPermisson.openBluetooth();
+              ZSPermissionPlugin.openBluetooth();
             },
             child: item("openBluetooth"),
           ),

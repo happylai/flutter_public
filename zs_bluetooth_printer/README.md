@@ -59,5 +59,8 @@ A new Flutter package.
 
     具体可参考案例
     https://github.com/xiyuxiaoxiao/flutter_public/tree/main/printer_example/test_app
+    
+    
+![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/小标签.jpg)
 
 

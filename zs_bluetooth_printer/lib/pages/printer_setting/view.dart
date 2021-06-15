@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:flutter_screenutil/screenutil.dart';
+import 'package:zs_bluetooth_printer/model/constant.dart';
 import 'package:zs_bluetooth_printer/ui_widget/img.dart';
 import 'package:zs_bluetooth_printer/ui_widget/over_scroll_behavior.dart';
 import 'package:zs_bluetooth_printer/print/printer_setting_device.dart';
@@ -52,6 +53,18 @@ Widget buildView(
       iconTheme: IconThemeData(color: Colors.black),
       brightness: Brightness.light,
       elevation: 0,
+      leading: IconButton(
+        onPressed: () => {Navigator.of(viewService.context).pop()},
+        icon: Container(
+          alignment: Alignment.center,
+          child: Image(
+            width: ScreenUtil().setWidth(36),
+            height: ScreenUtil().setWidth(36),
+            image: AssetImage(ZSImage.icBack,package: Package_Name),
+            color: Color(0xFF000000),
+          ),
+        ),
+      ),
     ),
     body: Column(
       children: [

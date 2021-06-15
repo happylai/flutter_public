@@ -24,6 +24,11 @@ abstract class ZsBluetoothPrinterApi {
 
   // 全局key
   GlobalKey<NavigatorState> globalNavigatorKey();
+
+  // 实现相关提示
+  showToast(String title) {
+
+  }
 }
 
 

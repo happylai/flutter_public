@@ -2,6 +2,8 @@
 // 当前的类型
 import 'dart:convert';
 
+import 'package:zs_bluetooth_printer/zs_bluetooth_printer.dart';
+
 import '../model/constant.dart';
 import '../model/shared_cache.dart';
 
@@ -52,6 +54,6 @@ class PrintTemplateList {
 
   // 根据id 请求数据模版
   Future<bool> loadPrintData() async{
-   return false;
+    return ZsBluetoothPrinterManager.printerApi.loadPrintData(this);
   }
 }

@@ -14,6 +14,9 @@ A new Flutter package.
                 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
                 <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+            如果SDK报错 ：
+            android/build.gradle 下修改 minSdkVersion：19  compileSdkVersion  targetSdkVersion 为 28；  
+
         Ios
             -- info.plist
                 Privacy - Bluetooth Always Usage Description

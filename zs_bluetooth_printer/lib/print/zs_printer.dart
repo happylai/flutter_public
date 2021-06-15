@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:zs_bluetooth_printer/model/constant.dart';
 import '../ui_widget/img.dart';
 import '../ui_widget/dialog.dart';
 import 'device_cache.dart';
@@ -284,6 +285,7 @@ class ZSPrinter {
                 children: [
                   Image.asset(
                     ZSImage.dialogError,
+                    package: Package_Name,
                     width: 55,
                     height: 55,
                   ),

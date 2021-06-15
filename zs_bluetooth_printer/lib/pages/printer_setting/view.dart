@@ -52,18 +52,6 @@ Widget buildView(
       iconTheme: IconThemeData(color: Colors.black),
       brightness: Brightness.light,
       elevation: 0,
-      leading: IconButton(
-        onPressed: () => {Navigator.of(viewService.context).pop()},
-        icon: Container(
-          alignment: Alignment.center,
-          child: Image(
-            width: ScreenUtil().setWidth(36),
-            height: ScreenUtil().setWidth(36),
-            image: AssetImage(ZSImage.icBack),
-            color: Color(0xFF000000),
-          ),
-        ),
-      ),
     ),
     body: Column(
       children: [

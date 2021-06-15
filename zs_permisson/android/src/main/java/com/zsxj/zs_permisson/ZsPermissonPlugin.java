@@ -26,6 +26,7 @@ public class ZsPermissonPlugin implements FlutterPlugin, ActivityAware, MethodCa
 
   private MethodChannel channel;
   private Activity activity;
+  private ActivityPluginBinding activityBinding;
   private Result permossion_result;
 
 
@@ -69,7 +70,9 @@ public class ZsPermissonPlugin implements FlutterPlugin, ActivityAware, MethodCa
 
   @Override
   public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+    activityBinding = binding;
     activity = binding.getActivity();
+    binding.addRequestPermissionsResultListener(this);
   }
 
   @Override
@@ -84,7 +87,11 @@ public class ZsPermissonPlugin implements FlutterPlugin, ActivityAware, MethodCa
 
   @Override
   public void onDetachedFromActivity() {
-
+    activityBinding.removeRequestPermissionsResultListener(this);
+    activityBinding = null;
+    channel.setMethodCallHandler(null);
+    channel = null;
+    activity = null;
   }
 
   @Override

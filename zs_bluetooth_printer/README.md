@@ -29,6 +29,9 @@ A new Flutter package.
         // 检测是否有连接了打印
         var res = PrintUtil.checkPrinterConnect();
 
+        // 检测模版是否配置
+        awiat PrintUtil.checkSmallPrintTemple();
+
         // 加入打印队列
-        PrintUtil().addTask();
+        PrintUtil(printJson: {}).addTask();
 

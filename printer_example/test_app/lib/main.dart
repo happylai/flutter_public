@@ -6,10 +6,12 @@ import 'package:flutter_screenutil/screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:test_app/test_data.dart';
 import 'package:test_app/toast.dart';
+import 'package:zs_bluetooth_printer/model/constant.dart';
 import 'package:zs_bluetooth_printer/model/routes.dart';
 import 'package:zs_bluetooth_printer/print_util/print_util.dart';
 import 'package:zs_bluetooth_printer/template/print_template_list.dart';
 import 'package:zs_bluetooth_printer/utils/global.dart';
+import 'package:zs_bluetooth_printer/utils/notification_center.dart';
 import 'package:zs_bluetooth_printer/zs_bluetooth_printer.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
@@ -60,7 +62,7 @@ class MyPrinter extends ZsBluetoothPrinterApi {
 
   @override
   showToast(String title) {
-    print(" 弹窗 $title");
+    Toast.showToast(title);
   }
 }
 
@@ -99,9 +101,19 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> implements ZSNotifcationCenterDelegate{
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  observeNotify(String key, dynamic param) {
+    Toast.showToast("收到通知： $key ；参数：$param");
+  }
+
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -148,6 +160,22 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: item("打印小标签"),
             ),
+
+            GestureDetector(
+              onTap: () {
+                ZSNotifcationCenter.addObserveForKey(this, Notify_Observe_BlueState_Key);
+              },
+              child: item("添加蓝牙状态通知监听"),
+            ),
+
+            GestureDetector(
+              onTap: () {
+                ZSNotifcationCenter.removeObserve(this);
+              },
+              child: item("移除通知 在页面销毁的时候在移除"),
+            ),
+
+
           ],
         ),
       ),
@@ -157,8 +185,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Widget item(text) {
   return Container(
-    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-    margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
     decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,

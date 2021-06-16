@@ -1,10 +1,6 @@
 
 import 'dart:async';
 
-/*
-* 广播模式 监听蓝牙状态变化
-* */
-const Notify_Observe_BlueState_Key = "notify_observe_blue_state_key";
 
 /*
 * 管理蓝牙监听 需要存储使用的地方 在不用的时候移除相关监听

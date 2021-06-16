@@ -75,7 +75,7 @@ void _init(Action action, Context<PrinterSettingState> ctx) async{
       prefix0.Navigator.of(ctx.context).pop();
     }
   };
-  ZSNotifcationCenter.addObserveForKey(ctx.state.printConnectObserveBridge, STORE_LAST_PRINTER_ID);
+  ZSNotifcationCenter.addObserveForKey(ctx.state.printConnectObserveBridge, Notify_Observe_StoreBluetooth_Key);
 
 }
 

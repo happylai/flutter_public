@@ -1,0 +1,50 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_blue (0.0.1):
+    - Flutter
+    - flutter_blue/Protos (= 0.0.1)
+  - flutter_blue/Protos (0.0.1):
+    - Flutter
+    - Protobuf (~> 3.11.4)
+  - Protobuf (3.11.4)
+  - shared_preferences (0.0.1):
+    - Flutter
+  - zs_flutter_data (0.0.1):
+    - Flutter
+  - zs_permisson (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_blue (from `.symlinks/plugins/flutter_blue/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - zs_flutter_data (from `.symlinks/plugins/zs_flutter_data/ios`)
+  - zs_permisson (from `.symlinks/plugins/zs_permisson/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Protobuf
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_blue:
+    :path: ".symlinks/plugins/flutter_blue/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  zs_flutter_data:
+    :path: ".symlinks/plugins/zs_flutter_data/ios"
+  zs_permisson:
+    :path: ".symlinks/plugins/zs_permisson/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_blue: eeb381dc4727a0954dede73515f683865494b370
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  shared_preferences: af6bfa751691cdc24be3045c43ec037377ada40d
+  zs_flutter_data: 2f2ef7754d8ea2f36c17178ba676f8851f5f0d15
+  zs_permisson: 3dc53c3cee088fba16d6a8394d0aa2251649c1b8
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.8.4

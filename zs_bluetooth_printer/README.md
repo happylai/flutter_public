@@ -59,8 +59,21 @@ A new Flutter package.
 
     具体可参考案例
     https://github.com/xiyuxiaoxiao/flutter_public/tree/main/printer_example/test_app
-    
-    
+
+    6. 监听蓝牙通知用
+        需要监听对象实现接口 ZSNotifcationCenterDelegate
+        abstract class ZSNotifcationCenterDelegate {
+          observeNotify(String key, dynamic param); // observeNotify为通知回调
+        }
+        // 添加监听
+        ZSNotifcationCenter.addObserveForKey(observe, Notify_Observe_StoreBluetooth_Key);
+        // 移除监听
+        ZSNotifcationCenter.removeObserve(observe);
+
+        通知相关Key
+            Notify_Observe_BlueState_Key;       // 蓝牙状态变化
+            Notify_Observe_StoreBluetooth_Key;  // 存储连接的设备
+
 ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/小标签.jpg)
 
 

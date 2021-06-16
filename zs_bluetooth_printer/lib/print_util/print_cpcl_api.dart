@@ -12,24 +12,12 @@ const printBitScal = 8;
 
 class ZSPrintCmdApi {
   static String getPrintCommand(Map jsonData) {
-    Map newJson = {};
-    newJson.addAll(jsonData);
-
-    if (!StringUtils.empty(newJson["payTime"])) {
-      newJson["payTime"] = "付款：" + newJson["payTime"];
-    }
-    if (!StringUtils.empty(newJson["lastPrintTime"])) {
-      newJson["lastPrintTime"] = "打印：" + newJson["lastPrintTime"];
-    }
-
-    newJson["spuGoodsNoSkuName"] =
-        StringUtils.appendOfSpace(newJson["spuGoodsNo"], newJson["skuName"]);
-    newJson["goodsNameSkuName"] =
-        StringUtils.appendOfSpace(newJson["goodsName"], newJson["skuName"]);
 
     if (PrintTemplateList.currentTemp == null || PrintTemplateList.currentTemp.printJson == null) {
       return "";
     }
+    Map newJson = {};
+    newJson.addAll(jsonData);
 
     PrintTemplate template = PrintTemplate.fromJson(PrintTemplateList.currentTemp.printJson);
     PrintBuilder builder = CpclBuilder();

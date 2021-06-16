@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter_blue/flutter_blue.dart';
+import '../model/constant.dart';
 import 'device_cache.dart';
 import 'printer_setting_device.dart';
 import '../utils/notification_center.dart';

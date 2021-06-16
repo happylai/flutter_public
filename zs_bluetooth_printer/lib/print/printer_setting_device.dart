@@ -82,7 +82,7 @@ class PrinterSettingDevice {
 
       if (value == BluetoothDeviceState.connected) {
         localStore.setValue(STORE_LAST_PRINTER_ID, this.result.device.id.toString());
-        ZSNotifcationCenter.sendNotifyForKey(STORE_LAST_PRINTER_ID, this.result.device.id.toString());
+        ZSNotifcationCenter.sendNotifyForKey(Notify_Observe_StoreBluetooth_Key, this.result.device.id.toString());
         return;
       }
     }

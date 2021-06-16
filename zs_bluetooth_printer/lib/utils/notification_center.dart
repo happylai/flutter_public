@@ -6,6 +6,11 @@
 *
 * */
 
+// 添加通知的对象 需要实现下面代理
+abstract class ZSNotifcationCenterDelegate {
+  observeNotify(String key, dynamic param);
+}
+
 Map <String, List> _observeMap = {};
 
 class ZSNotifcationCenter {
@@ -44,8 +49,4 @@ class ZSNotifcationCenter {
       }
     }
   }
-}
-
-observeNotify(String key, dynamic param) {
-
 }

@@ -5,6 +5,14 @@ A new Flutter package.
 ## Getting Started
 
 使用步骤
+    
+    引入:
+    
+    zs_bluetooth_printer:
+      git:
+        url: https://github.com/xiyuxiaoxiao/flutter_public.git
+        path: zs_bluetooth_printer
+        
 
     配置项目 添加蓝牙相关权限
 

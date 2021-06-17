@@ -27,7 +27,9 @@ dependencies:
       path: zs_flutter_data
 
   zs_permisson:
-    path: ../zs_permisson/
+    git:
+      url: https://github.com/xiyuxiaoxiao/flutter_public.git
+      path: zs_permisson
 
 dev_dependencies:
   flutter_test:

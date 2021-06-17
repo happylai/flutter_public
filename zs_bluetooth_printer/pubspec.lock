@@ -329,9 +329,11 @@ packages:
   zs_permisson:
     dependency: "direct main"
     description:
-      path: "../zs_permisson"
-      relative: true
-    source: path
+      path: zs_permisson
+      ref: HEAD
+      resolved-ref: "6737d86f94db00b619cf8e773095fa27698d7b09"
+      url: "https://github.com/xiyuxiaoxiao/flutter_public.git"
+    source: git
     version: "0.0.1"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"

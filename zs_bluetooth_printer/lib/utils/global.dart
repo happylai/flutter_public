@@ -7,4 +7,5 @@ class Global {
   static GlobalKey<NavigatorState> get navigatorKey {
     return ZsBluetoothPrinterManager.printerApi.globalNavigatorKey();
   }
+  static BuildContext appContext;
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:zs_bluetooth_printer/zs_bluetooth_printer.dart';
 import 'floating_overlayer.dart';
 import '../utils/global.dart';
 import '../print_util/print_util.dart';
@@ -15,9 +16,12 @@ void initPrintTaskEvent() {
 FloatingOverLay zsPrintTaskViewLayer = FloatingOverLay();
 // 不能用 隐藏 会出现在延时到点后 点击view和隐藏view 会导致点击后响应 但是却崩溃了
 void ZSPrintTaskViewCount(TaskCount taskCount) {
+  if (false == ZsBluetoothPrinterManager.printerApi.showPrintTaskOverlay()) {
+    return;
+  }
   if (zsPrintTaskViewLayer.isRemove()) {
     ZSPrintTaskView view = ZSPrintTaskView(model: taskCount);
-    zsPrintTaskViewLayer.show(context: Global.navigatorKey.currentContext, child: view);
+    zsPrintTaskViewLayer.show(context: Global.appContext, child: view);
   } else {
     ZSPrintTaskView view = zsPrintTaskViewLayer.view;
     view.setNewValue(taskCount);

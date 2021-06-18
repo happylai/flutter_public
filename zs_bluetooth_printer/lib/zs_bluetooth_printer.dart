@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:zs_bluetooth_printer/model/routes.dart';
 import 'package:zs_bluetooth_printer/template/print_template_list.dart';
 import 'package:zs_bluetooth_printer/ui_widget/print_task_view.dart';
+import 'package:zs_bluetooth_printer/utils/global.dart';
 
 import 'model/shared_cache.dart';
 
@@ -30,6 +31,10 @@ abstract class ZsBluetoothPrinterApi {
   showToast(String title) {
 
   }
+
+  bool showPrintTaskOverlay() {
+    return false;
+  }
 }
 
 
@@ -55,5 +60,9 @@ class ZsBluetoothPrinterManager {
       });
     }
     return null;
+  }
+
+  static setAppContext(BuildContext context) {
+    Global.appContext = context;
   }
 }

@@ -115,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> implements ZSNotifcationCenterD
 
     @override
   Widget build(BuildContext context) {
+      ZsBluetoothPrinterManager.setAppContext(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("测试打印"),

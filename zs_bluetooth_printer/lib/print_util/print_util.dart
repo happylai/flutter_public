@@ -9,6 +9,39 @@ import 'print_cpcl_api.dart';
 
 import '../utils/global.dart';
 
+void Function(TaskCount obj) printTaskCountEvent;
+
+class TaskCount {
+  int printed;
+  int unPrinted;
+
+  TaskCount({
+    this.printed = 0,
+    this.unPrinted = 0,
+  });
+
+  TaskCount copy(){
+    return TaskCount(
+      printed: printed,
+      unPrinted: unPrinted,
+    );
+  }
+
+  void _add() {
+    printed += 1;
+    unPrinted -= 1;
+
+    // 防止数据在最后清空的 导致任务无法体验最后一个提示 里层加判断是为了防止在延迟到了后 之前又有任务加入
+    if (unPrinted <= 0) {
+      Future.delayed(Duration(seconds: 1),(){
+        if (unPrinted == 0) {
+          printed = 0;
+        }
+      });
+    }
+  }
+}
+
 
 class PrintUtil{
 
@@ -92,6 +125,9 @@ class PrintUtil{
   * */
   static List<PrintUtil> _taskList = [];
 
+  // 已打印数量  未打印数量 可以通过查询_taskList 来返回 也可以通过记录来返回
+  static TaskCount _taskCount = TaskCount();
+
   /*
   * 判断队列是否正在进行中
   * */
@@ -104,11 +140,35 @@ class PrintUtil{
     return Global.navigatorKey.currentContext;
   }
 
+  // 添加 _taskList.length <= 0 是为了防止出错
+  static void _onPrintSuccess(){
+    _taskCount._add();
+    notifyTaskCount();
+  }
+
+  static void _onTaskListAdd(){
+    int noPrintCount = 0;
+    _taskList.forEach((element) {
+      if (element.cmd == null) {
+        noPrintCount += element.maxCount;
+      }
+    });
+    _taskCount.unPrinted = noPrintCount;
+    notifyTaskCount();
+  }
+  static void notifyTaskCount() {
+    if (printTaskCountEvent != null) {
+      printTaskCountEvent(_taskCount.copy());
+    }
+  }
+
   /*
   * 添加队列
   * */
   static void _addTask(task) {
     _taskList.add(task);
+
+    _onTaskListAdd();
 
     // 绑定监听 数据
     zsBlueWriteCharacteristicEvent = PrintUtil._blueWriteCharacteristicEvent;
@@ -180,6 +240,9 @@ class PrintUtil{
       task.maxCount -= 1;
       if (task.maxCount <= 0) {
         _removeCurrentTask();
+      }
+      if (task.cmd == null) {
+        _onPrintSuccess();
       }
       _start();
       if (task.success != null){

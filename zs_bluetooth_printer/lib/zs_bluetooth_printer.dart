@@ -3,6 +3,7 @@ library zs_bluetooth_printer;
 import 'package:flutter/cupertino.dart';
 import 'package:zs_bluetooth_printer/model/routes.dart';
 import 'package:zs_bluetooth_printer/template/print_template_list.dart';
+import 'package:zs_bluetooth_printer/ui_widget/print_task_view.dart';
 
 import 'model/shared_cache.dart';
 
@@ -37,6 +38,7 @@ class ZsBluetoothPrinterManager {
   static ZsBluetoothPrinterApi _zsBluetoothPrinterApi;
 
   static initPrinter(ZsBluetoothPrinterApi obj)async{
+    initPrintTaskEvent();
     await localStore.init();
     _zsBluetoothPrinterApi = obj;
   }

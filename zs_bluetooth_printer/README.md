@@ -65,8 +65,6 @@ A new Flutter package.
         // 加入打印队列
         PrintUtil(printJson: {}).addTask();
 
-    具体可参考案例
-    https://github.com/xiyuxiaoxiao/flutter_public/tree/main/printer_example/test_app
 
     6. 监听蓝牙通知用
         需要监听对象实现接口 ZSNotifcationCenterDelegate
@@ -89,6 +87,12 @@ A new Flutter package.
     3.  自定义浮窗Widget 否则使用默认的
             重写 ZsBluetoothPrinterApi 的 printTaskOverlayWidget
 
+具体可参考案例
+    https://github.com/xiyuxiaoxiao/flutter_public/tree/main/printer_example/test_app
+
+    ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/任务悬浮.jpg)
+
+小标签打印结果：
 ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/小标签.jpg)
 
 

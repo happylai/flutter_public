@@ -90,7 +90,7 @@ A new Flutter package.
 具体可参考案例
     https://github.com/xiyuxiaoxiao/flutter_public/tree/main/printer_example/test_app
 
-    ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/任务悬浮.jpg)
+![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/任务悬浮.jpg)
 
 小标签打印结果：
 ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/小标签.jpg)

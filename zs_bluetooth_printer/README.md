@@ -82,8 +82,12 @@ A new Flutter package.
             Notify_Observe_BlueState_Key;       // 蓝牙状态变化
             Notify_Observe_StoreBluetooth_Key;  // 存储连接的设备
 
-    7. 使用浮窗显示任务个数的话 需要在Page build中设置 appContent
+二. 显示浮窗显示任务个数
+    1.  重写 ZsBluetoothPrinterApi 的 showPrintTaskOverlay 返回true
+    2.  需要在Page build中设置 appContent
         ZsBluetoothPrinterManager.setAppContext(context);
+    3.  自定义浮窗Widget 否则使用默认的
+            重写 ZsBluetoothPrinterApi 的 printTaskOverlayWidget
 
 ![image](https://github.com/xiyuxiaoxiao/flutter_public/blob/main/printer_example/小标签.jpg)
 

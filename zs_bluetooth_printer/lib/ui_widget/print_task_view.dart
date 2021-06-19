@@ -75,33 +75,42 @@ class _ZSPrintTaskViewState extends State<ZSPrintTaskView> {
 
   @override
   Widget build(BuildContext context) {
+
+    Widget child = ZsBluetoothPrinterManager.printerApi.printTaskOverlayWidget(widget.model);
+    if (child == null) {
+      child = _defaultContainer();
+    }
+
     return Material(
       color: Color(0x00000000),
-      child: Container(
-//        width: 100,
-          height: 40,
-          padding: EdgeInsets.only(left: 20, right: 20),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.amber,
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-          ),
-          child: Column(
-            children: [
-              Text(
-                widget.model.printed.toString() + " 已打印",
-                style: TextStyle(
-                  fontSize: 13,
-                ),
-              ),
-              Text(
-                widget.model.unPrinted.toString() + " 未打印",
-                style: TextStyle(
-                  fontSize: 13,
-                ),
-              ),
-            ],
-          )),
+      child: child,
     );
+  }
+
+  Widget _defaultContainer() {
+    return Container(
+        height: 40,
+        padding: EdgeInsets.only(left: 20, right: 20),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: Colors.amber,
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
+        child: Column(
+          children: [
+            Text(
+              widget.model.printed.toString() + " 已打印",
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+            Text(
+              widget.model.unPrinted.toString() + " 未打印",
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+          ],
+        ));
   }
 }

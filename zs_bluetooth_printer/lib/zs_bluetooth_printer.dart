@@ -2,6 +2,7 @@ library zs_bluetooth_printer;
 
 import 'package:flutter/cupertino.dart';
 import 'package:zs_bluetooth_printer/model/routes.dart';
+import 'package:zs_bluetooth_printer/print_util/print_util.dart';
 import 'package:zs_bluetooth_printer/template/print_template_list.dart';
 import 'package:zs_bluetooth_printer/ui_widget/print_task_view.dart';
 import 'package:zs_bluetooth_printer/utils/global.dart';
@@ -32,8 +33,13 @@ abstract class ZsBluetoothPrinterApi {
 
   }
 
+  // 是否展示悬浮窗
   bool showPrintTaskOverlay() {
     return false;
+  }
+  // 悬浮窗所展示的widget
+  Widget printTaskOverlayWidget(TaskCount taskCount){
+    return null;
   }
 }
 

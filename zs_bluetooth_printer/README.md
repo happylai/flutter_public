@@ -1,6 +1,8 @@
+使用连接说明: https://www.jianshu.com/p/907ea92d2387
+
 # zs_bluetooth_printer
 
-A new Flutter package.
+蓝牙打印插件
 
 ## Getting Started
 

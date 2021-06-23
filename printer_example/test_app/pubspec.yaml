@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
 
   flutter_screenutil: ^3.1.0
+
+#  zs_bluetooth_printer:
+#    path: ../../zs_bluetooth_printer/
   zs_bluetooth_printer:
     git:
       url: https://github.com/xiyuxiaoxiao/flutter_public.git

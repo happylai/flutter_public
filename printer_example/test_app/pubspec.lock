@@ -102,7 +102,7 @@ packages:
     description:
       path: "flutter_blue-0.7.3"
       ref: HEAD
-      resolved-ref: "0f9dc286540330a8b851b0810283419d63f93fd3"
+      resolved-ref: "300e0ba47eb5fe0ff21fed63eba4290587608a08"
       url: "https://github.com/xiyuxiaoxiao/flutter_public.git"
     source: git
     version: "0.7.3"
@@ -206,7 +206,7 @@ packages:
       name: protobuf
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "1.1.3"
+    version: "1.1.4"
   rxdart:
     dependency: transitive
     description:
@@ -336,7 +336,7 @@ packages:
     description:
       path: zs_bluetooth_printer
       ref: HEAD
-      resolved-ref: "6737d86f94db00b619cf8e773095fa27698d7b09"
+      resolved-ref: "300e0ba47eb5fe0ff21fed63eba4290587608a08"
       url: "https://github.com/xiyuxiaoxiao/flutter_public.git"
     source: git
     version: "0.0.1"
@@ -345,7 +345,7 @@ packages:
     description:
       path: zs_flutter_data
       ref: HEAD
-      resolved-ref: "0f9dc286540330a8b851b0810283419d63f93fd3"
+      resolved-ref: "300e0ba47eb5fe0ff21fed63eba4290587608a08"
       url: "https://github.com/xiyuxiaoxiao/flutter_public.git"
     source: git
     version: "0.0.1"
@@ -354,7 +354,7 @@ packages:
     description:
       path: zs_permisson
       ref: HEAD
-      resolved-ref: "6737d86f94db00b619cf8e773095fa27698d7b09"
+      resolved-ref: "300e0ba47eb5fe0ff21fed63eba4290587608a08"
       url: "https://github.com/xiyuxiaoxiao/flutter_public.git"
     source: git
     version: "0.0.1"

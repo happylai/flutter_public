@@ -82,8 +82,12 @@
             Notify_Observe_BlueState_Key;       // 蓝牙状态变化
             Notify_Observe_StoreBluetooth_Key;  // 存储连接的设备
 
-二. 显示浮窗显示任务个数
-    1.  重写 ZsBluetoothPrinterApi 的 showPrintTaskOverlay 返回true
+二. 字体单位映射 默认使用毫米单位
+    1.  如果需要映射 设置 ZsBluetoothPrinterApi 的 fontSizeUnitMillimeter = false;
+    2.  重写 ZsBluetoothPrinterApi 的 fontSizeMapToMillimeter 默认使用系统的像素映射毫米
+
+三. 显示浮窗显示任务个数
+    1.  设置 ZsBluetoothPrinterApi 的 showPrintTaskOverlay = true;
     2.  需要在Page build中设置 appContent
         ZsBluetoothPrinterManager.setAppContext(context);
     3.  自定义浮窗Widget 否则使用默认的

@@ -29,6 +29,12 @@ void main()async {
 }
 
 class MyPrinter extends ZsBluetoothPrinterApi {
+
+  MyPrinter(){
+    //fontSizeUnitMillimeter = false;
+    //showPrintTaskOverlay = true;
+  }
+
   @override
   GlobalKey<NavigatorState> globalNavigatorKey() {
     return navigatorKey;
@@ -41,7 +47,6 @@ class MyPrinter extends ZsBluetoothPrinterApi {
     }else {
       temp.printJson = TempletaJSon.size50();
     }
-    var res = temp.printJson != null;
     return temp.printJson != null;
   }
 
@@ -54,7 +59,7 @@ class MyPrinter extends ZsBluetoothPrinterApi {
         id: "0",
       ),
       PrintTemplateList(
-        name: "20*30",
+        name: "50*30",
         id: "1",
       ),
     ];

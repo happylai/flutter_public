@@ -16,7 +16,7 @@ void initPrintTaskEvent() {
 FloatingOverLay zsPrintTaskViewLayer = FloatingOverLay();
 // 不能用 隐藏 会出现在延时到点后 点击view和隐藏view 会导致点击后响应 但是却崩溃了
 void ZSPrintTaskViewCount(TaskCount taskCount) {
-  if (false == ZsBluetoothPrinterManager.printerApi.showPrintTaskOverlay()) {
+  if (false == ZsBluetoothPrinterManager.printerApi.showPrintTaskOverlay) {
     return;
   }
   if (zsPrintTaskViewLayer.isRemove()) {

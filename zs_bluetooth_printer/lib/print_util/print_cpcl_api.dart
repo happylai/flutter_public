@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
+import 'package:zs_bluetooth_printer/zs_bluetooth_printer.dart';
 import '../template/print_template_list.dart';
 import '../print/cpcl/cpcl_builder.dart';
 import '../print/cpcl/font.dart';
@@ -252,7 +253,7 @@ class PrintTemplateElement {
     top = json["top"];
     width = json["width"];
     height = json["height"];
-    fontSize = json["fontSize"] ?? "3";
+    fontSize = ZsBluetoothPrinterManager.printerApi.fontSizeMapToMillimeter(json["fontSize"]) ?? "3";
     fontWeight = json["fontWeight"] ?? "0";
     rotation = json["rotation"] ?? 0;
     hideText = json["hideText"] ?? 1;

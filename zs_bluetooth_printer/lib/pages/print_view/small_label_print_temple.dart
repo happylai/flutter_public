@@ -65,7 +65,7 @@ class SmallLabelPrintTemple extends StatelessWidget {
 
       if(element.fieldType == "text" && element.bgBlack){
         child = Container(
-          alignment: Alignment.center,
+          alignment: getTextAlign(element),
           color: Colors.black,
           child: Text(
             (element.description ?? element.field) ?? "",
@@ -152,21 +152,8 @@ double templeSize(String f) {
   return v * 17.5;
 }
 double getTextFont(String fontSize) {
-  Map json = {
-    "2":    15,
-    "2.5":  16,
-    "3":    17,
-    "4":    18,
-    "5":    20,
-  };
-
-  double f;
-  if (json[fontSize] == null) {
-    f = json["3"] * 1.0;
-  }else {
-    f = json[fontSize] * 1.0;
-  }
-  return ScreenUtil().setSp(f*2.4);
+  double f = double.parse(fontSize);
+  return ScreenUtil().setSp(f*11.6);
 }
 
 AlignmentGeometry getTextAlign(PrintTemplateElement element) {

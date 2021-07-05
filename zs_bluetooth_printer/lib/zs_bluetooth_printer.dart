@@ -19,6 +19,12 @@ import 'model/shared_cache.dart';
 
 abstract class ZsBluetoothPrinterApi {
 
+  //  字体单位是否是 毫米为单位
+  bool fontSizeUnitMillimeter = true;
+
+  //  是否展示悬浮窗 默认不展示
+  bool showPrintTaskOverlay = false;
+
   // 请求模版列表
   Future<List<PrintTemplateList>> loadPrintTempList();
 
@@ -33,10 +39,32 @@ abstract class ZsBluetoothPrinterApi {
 
   }
 
-  // 是否展示悬浮窗
-  bool showPrintTaskOverlay() {
-    return false;
+  // font size 映射到毫米单位
+  String fontSizeMapToMillimeter(String font) {
+    if (fontSizeUnitMillimeter) return font;
+    return _fontSizeMapToMillimeterWithPixel(font);
   }
+
+  // font size 映射到毫米单位  使用css像素
+  String _fontSizeMapToMillimeterWithPixel(String font) {
+    double f = 0;
+    try {
+      f = double.parse(font);
+    }catch(e){
+      return "3";
+    }
+    if (f <= 6)   return "2";
+    if (f <= 7)   return "2.5";
+    if (f <= 9)   return "3";
+    if (f <= 15)  return "4";
+    if (f <= 17)  return "5";
+    if (f <= 18)  return "6";
+    if (f <= 20)  return "7";
+    if (f <= 22)  return "8";
+    //if (f <= 24)  return "9";
+    return "9";
+  }
+
   // 悬浮窗所展示的widget
   Widget printTaskOverlayWidget(TaskCount taskCount){
     return null;

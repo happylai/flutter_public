@@ -33,10 +33,10 @@ class Fonts {
   static const Font font20 = Font(family: '3', lattice: '20');
   static const Font font24 = Font(family: '24', lattice: '24');
   static const Font font32 = Font(family: '4', lattice: '32');
-  static const Font font40 = Font(family: '42', w: '2', h: '2', lattice: '40');
+  static const Font font40 = Font(family: '3', w: '2', h: '2', lattice: '40');
 
   static const Font font48 = Font(family: '24', w: '2', h: '2', lattice: '48');
-  static const Font font56 = Font(family: '7', size: '3', lattice: '56');
+  static const Font font56 = Font(family: '3', w: '3', h: '3',  lattice: '60');
   static const Font font64 = Font(family: '4', w: '2', h: '2', lattice: '64');
   static const Font font72 = Font(family: '24', w: '3', h: '3', lattice: '72');
 }

@@ -140,18 +140,18 @@ class ZSPrinter {
 
     bool endFun = false;
 
-    Timer t = Timer(Duration(milliseconds: 500), () {
-      if (endFun == false) {
-        print(" ----------- 读取状态 超时了 -------- ");
-        setStateByBytes([]);
-      }
-    });
+    // Timer t = Timer(Duration(milliseconds: 500), () {
+    //   if (endFun == false) {
+    //     print(" ----------- 读取状态 超时了 -------- ");
+    //     setStateByBytes([]);
+    //   }
+    // });
 
     while (zsPrinteStateReading == true) {
       await Future.delayed(Duration(milliseconds: 1));
     }
 
-    t.cancel();
+    // t.cancel();
     endFun = true;
     return printerState;
   }
